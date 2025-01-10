@@ -647,6 +647,9 @@ on post-fs-data
     mkdir /data/vendor/thermal 0777 root system
     mkdir /data/vendor/thermal/config 0777 root system
 
+    # Dolby
+    mkdir /data/vendor/dolby 0770 media media
+
     #MCUPM log
     chmod 0620 /sys/class/misc/mcupm/mcupm_mobile_log
     chown root system /sys/class/misc/mcupm/mcupm_mobile_log
