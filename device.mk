@@ -282,7 +282,7 @@ USE_DEX2OAT_DEBUG := false
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-mediatek \
+    android.hardware.power-service.mediatek-libperfmgr \
     android.hardware.power@1.3.vendor
 
 PRODUCT_PACKAGES += \
