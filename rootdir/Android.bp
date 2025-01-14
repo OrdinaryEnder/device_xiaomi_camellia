@@ -5,6 +5,14 @@
 //
 
 prebuilt_etc {
+    name: "init.zram.rc",
+    src: "etc/init.zram.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+
+prebuilt_etc {
     name: "fstab.mt6833",
     src: "etc/fstab.mt6833",
     ramdisk_available: true,
