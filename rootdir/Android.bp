@@ -11,6 +11,12 @@ prebuilt_etc {
     vendor: true,
 }
 
+prebuilt_etc {
+    name: "init.mt6833.power.rc",
+    src: "etc/init.mt6833.power.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
 
 prebuilt_etc {
     name: "fstab.mt6833",

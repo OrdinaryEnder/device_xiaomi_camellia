@@ -1,9 +1,11 @@
 import /vendor/etc/init/hw/init.connectivity.rc
+import /vendor/etc/init/hw/init.mt6833.power.rc
 import /vendor/etc/init/hw/init.mt6833.usb.rc
 import /vendor/etc/init/hw/init.project.rc
 import /vendor/etc/init/hw/init.sensor_2_0.rc
 import /vendor/etc/init/hw/init.stnfc.rc
 import /vendor/etc/init/hw/init.modem.rc
+
 
 on early-init
     # boot perf. tune
@@ -22,13 +24,6 @@ on init
     write /proc/sys/net/core/rmem_max 8388608
     write /proc/sys/net/ipv4/tcp_mtu_probing 1
 
-    # update cpus for cpuset cgroup
-    write /dev/cpuset/foreground/cpus 0-7
-    write /dev/cpuset/foreground/boost/cpus 0-7
-    write /dev/cpuset/background/cpus 0-3
-    write /dev/cpuset/system-background/cpus 0-5
-    write /dev/cpuset/top-app/cpus 0-7
-
     # boot time fs tune
     write /sys/block/mmcblk0/queue/iostats 0
     write /sys/block/mmcblk0/queue/nr_requests 256
@@ -43,8 +38,6 @@ on late-init
 
 on charger
     #Set CPU/Dram init parameter
-    write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1"
-    write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
 
     chmod 0660 /dev/spm
     chown system system /dev/spm

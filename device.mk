@@ -282,7 +282,7 @@ USE_DEX2OAT_DEBUG := false
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.mediatek-libperfmgr \
+    android.hardware.power-service.pixel-libperfmgr \
     android.hardware.power@1.3.vendor
 
 PRODUCT_COPY_FILES += \
@@ -372,6 +372,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
+    hardware/mediatek/libmtkperf_client \
     hardware/mediatek \
     hardware/xiaomi
 
